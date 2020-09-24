@@ -17,18 +17,21 @@
         <form method="post" action="">
             
             <label>First: </label>
-            <input type="number" name="age_input" value="" min="0">
+            <input type="number" name="age_input" value="">
             <br>
             <label>Second: </label>
-            <input type="number" name="age_input" value="" min="0">
+            <input type="number" name="age_input" value="">
             <br>
             
             <input type="submit" value="+">
             <input type="submit" value="-">
             <input type="submit" value="*">
             <input type="submit" value="%">
+            <br>
+            
+            <p>${arithMessage}</p>
                 
         </form>
-        <a href="agecalc">Age Calculator</a>
+        <a href="age">Age Calculator</a>
     </body>
 </html>

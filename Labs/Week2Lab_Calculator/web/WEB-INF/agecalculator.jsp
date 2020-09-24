@@ -14,17 +14,17 @@
     <body>
         <h1>Age Calculator</h1>
         
-        <form method="post" action="">
+        <form method="post" action="age">
             
             <label>Enter your age: </label>
-            <input type="number" name="age_input" value="" min="0">
+            <input type="number" name="age_input" value="${ageinput}">
             <br>
             
             <input type="submit" value="Age next birthday">
             <br>
             
             <p>${ageMessage}</p>
-             
+                    
         </form>
         <a href="arithmetic">Arithmetic Calculator</a>
         

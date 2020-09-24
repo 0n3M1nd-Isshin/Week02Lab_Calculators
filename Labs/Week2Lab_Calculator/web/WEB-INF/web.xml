@@ -14,7 +14,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>AgeCalculatorServlet</servlet-name>
-        <url-pattern>/agecalc</url-pattern>
+        <url-pattern>/age</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -22,6 +22,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>agecalc</welcome-file>
+        <welcome-file>age</welcome-file>
     </welcome-file-list>
 </web-app>

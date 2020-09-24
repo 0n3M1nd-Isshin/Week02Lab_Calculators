@@ -29,7 +29,33 @@ public class AgeCalculatorServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException 
     {
+        //parameters
+        int next = 1;
+        int age_input;
+        String ageinput = request.getParameter("age_input");
+        //Integer.parseInt("ageinput");
         
+        //attributes
+        request.setAttribute("ageInput", ageinput);
+        
+        //prevents null inputs 
+        if(ageinput == null || ageinput.equals("")) {
+            
+            request.setAttribute("ageMessage", "You must give your current age.");
+            getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
+            return;
+            
+        }
+        if (!ageinput.isEmpty()) {
+            
+            int nextBday;
+            nextBday = Integer.parseInt(ageinput) + next;
+            
+            request.setAttribute("ageMessage", "Your age next birthday will be " + nextBday);
+            
+            
+        }
+        getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
         
     }
 }

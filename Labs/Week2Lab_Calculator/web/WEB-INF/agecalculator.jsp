@@ -17,7 +17,7 @@
         <form method="post" action="age">
             
             <label>Enter your age: </label>
-            <input type="number" name="age_input" value="${ageinput}">
+            <input type="number" name="age_input" value="${ageinput}" min="0">
             <br>
             
             <input type="submit" value="Age next birthday">

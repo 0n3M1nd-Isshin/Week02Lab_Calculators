@@ -31,9 +31,7 @@ public class AgeCalculatorServlet extends HttpServlet {
     {
         //parameters
         int next = 1;
-        int age_input;
         String ageinput = request.getParameter("age_input");
-        //Integer.parseInt("ageinput");
         
         //attributes
         request.setAttribute("ageInput", ageinput);
@@ -55,6 +53,8 @@ public class AgeCalculatorServlet extends HttpServlet {
             
             
         }
+        
+        //refresh page with the answer
         getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
         
     }

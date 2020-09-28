@@ -39,10 +39,16 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
         request.setAttribute("firstNum", firstnum);
         request.setAttribute("secondNum", secondnum);        
         
-        if(firstnum.isEmpty() && secondnum.isEmpty() || !firstnum.isEmpty() && secondnum.isEmpty() || firstnum.isEmpty() && !secondnum.isEmpty()) {
+        //empty inputs
+        if(firstnum.isEmpty() && secondnum.isEmpty() ||
+                !firstnum.isEmpty() && secondnum.isEmpty() ||
+                firstnum.isEmpty() && !secondnum.isEmpty() ||
+                firstnum instanceof String ||
+                secondnum instanceof String) {
             request.setAttribute("arithMessage", "invalid"); 
         }
         
+        //switch cases / valid number inputs
         if(!firstnum.isEmpty() && !secondnum.isEmpty()) {
             int answer;
             
@@ -59,6 +65,7 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
                 case "%": answer = Integer.parseInt(firstnum) % Integer.parseInt(secondnum);
                           request.setAttribute("arithMessage", answer);
                 break;
+
                 default: request.setAttribute("arithMessage", "---");
                 break;
             }

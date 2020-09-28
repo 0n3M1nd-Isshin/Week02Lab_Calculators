@@ -37,21 +37,17 @@ public class AgeCalculatorServlet extends HttpServlet {
         request.setAttribute("ageInput", ageinput);
         
         //prevents null inputs 
-        if(ageinput == null || ageinput.equals("")) {
-            
+        if(ageinput == null || ageinput.equals("")) {          
             request.setAttribute("ageMessage", "You must give your current age.");
             getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp").forward(request, response);
-            return;
-            
+            return;            
         }
-        if (!ageinput.isEmpty()) {
-            
+        
+        //valid number input
+        if (!ageinput.isEmpty()) {        
             int nextBday;
-            nextBday = Integer.parseInt(ageinput) + next;
-            
-            request.setAttribute("ageMessage", "Your age next birthday will be " + nextBday);
-            
-            
+            nextBday = Integer.parseInt(ageinput) + next;             
+            request.setAttribute("ageMessage", "Your age next birthday will be " + nextBday);  
         }
         
         //refresh page with the answer
